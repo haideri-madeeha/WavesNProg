@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import csv
 
 def plot_sound_graph(filename):
     data = np.loadtxt(filename, delimiter = ",", skiprows = 1)
@@ -29,7 +28,6 @@ def plot_sound_graph(filename):
     dm = np.sqrt(chi2_red * (S / delta))
     db = np.sqrt(chi2_red * (Sxx / delta))
 
-    plt.figure(figsize = (10, 6))
     plt.errorbar(x, y, yerr=sigma, fmt = "o", capsize = 5)
 
     x_fit = np.linspace(min(x), max(x), 200)
